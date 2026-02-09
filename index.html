@@ -1,44 +1,342 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>From Junior to Mid-Level Developer</title>
+    <meta name="description" content="Bincom Knowledge Development Session - Real skills that get you promoted" />
+    <meta name="author" content="Adesemowo Emmanuel" />
 
-		<title>reveal.js</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#3b82f6',
+              accent: '#10b981',
+              darkbg: '#0f172a',
+              card: '#1e293b',
+              lighttext: '#e2e8f0',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section data-visibility="hidden">Slide X</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Reveal.js -->
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-				showHiddenSlides: true,
+  <style>
+  :root {
+    --r-background-color: #0f172a;
+    --r-main-color: #e2e8f0;
+    --r-heading-color: #ffffff;
+    --r-link-color: #3b82f6;
+    --r-link-color-hover: #60a5fa;
+  }
 
-				slideNumber: 'c/t',
+  body {
+    background-color: #0f172a;
+  }
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+  .reveal {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;           /* slightly bigger base text */
+    font-weight: 400;
+  }
+
+  /* Make headings MUCH bolder and bigger */
+  .reveal h1 {
+    font-size: 4.5rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #ffffff;
+  }
+
+  .reveal h2 {
+    font-size: 3.6rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #3b82f6;               /* keep primary color for h2 */
+  }
+
+  .reveal h3 {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    color: #10b981;
+  }
+  .reveal li {
+    font-size: 1.5rem !important;
+  }
+
+  /* Better section alignment – left-aligned content by default */
+  .reveal .slides section {
+    text-align: left;
+    padding: 40px 80px;           /* more breathing room */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* vertical center */
+    align-items: flex-start;      /* left align horizontally */
+    min-height: 100vh;
+  }
+
+  /* Override for title slide (keep it centered) */
+  .reveal .slides section.smaller-title {
+    text-align: center;
+    align-items: center;
+  }
+
+  .reveal ul, .reveal ol {
+    margin-left: 1.5em;
+    line-height: 1.7;
+    font-size: 1.15rem;
+  }
+
+  .reveal li {
+    margin-bottom: 0.3em;
+  }
+
+  .text-primary   { color: #3b82f6; }
+  .text-accent    { color: #10b981; }
+  .text-light     { color: #e2e8f0; }
+  .bg-card        { 
+    background-color: #1e293b; 
+    border-radius: 12px; 
+    padding: 1.8rem; 
+    margin: 1rem 0;
+  }
+
+  .emoji-big {
+    font-size: 3.5rem;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+  }
+
+  /* Make strong/bold text pop more */
+  .reveal strong {
+    font-weight: 800;
+    color: #ffffff;
+  }
+</style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- Slide 1: Title -->
+        <section data-background-color="#0f172a" class="smaller-title flex flex-col items-center justify-center min-h-screen">
+          <h1 class="text-white font-black">
+            From Junior<br>to Mid-Level Developer
+          </h1>
+          <h2 class="mt-10 text-primary text-5xl font-bold">
+            The Real Skills That Actually Get You Promoted
+          </h2>
+          <div class="mt-24 text-center">
+            <p class="text-2xl text-gray-300">Bincom Knowledge Development Session</p>
+            <p class="mt-3 text-xl text-gray-500">Adesemowo Emmanuel • February 2026</p>
+          </div>
+          <p class="mt-16 text-xl text-accent italic">Because writing code is only half the game 🚀</p>
+        </section>
+
+        <!-- Slide 2: Agenda -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-12">What We're Covering Today</h2>
+          <ul class="text-2xl text-lighttext space-y-1">
+            <li><span class="emoji-big">🔍</span> What actually separates Junior from Mid-Level devs</li>
+            <li><span class="emoji-big">💻</span> Technical skills that matter most in 2026</li>
+            <li><span class="emoji-big">🧠</span> Mindset & soft skills that get you noticed & promoted</li>
+            <li><span class="emoji-big">🤖</span> How to use AI to level up faster (not slower)</li>
+            <li><span class="emoji-big">📂</span> Building a portfolio & proof that screams "mid-level"</li>
+            <li><span class="emoji-big">⚠️</span> Common traps juniors fall into (and how to avoid)</li>
+            <li><span class="emoji-big">📈</span> Clear, actionable steps to make the jump this year</li>
+          </ul>
+          <p class="mt-16 text-xl text-gray-400 text-center">
+            Let's be real — this is the stuff nobody teaches you in bootcamps
+          </p>
+        </section>
+
+        <!-- Slide 3: Junior vs Mid-Level - The Real Difference -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">What Actually Separates Junior from Mid-Level?</h2>
+          <div class="grid grid-cols-2 gap-8">
+            <div class="bg-card">
+              <h3 class="text-3xl text-accent mb-6">Junior Dev</h3>
+              <ul class="text-xl space-y-4">
+                <li>Follows instructions closely</li>
+                <li>Needs help with most tasks</li>
+                <li>Focuses on "making it work"</li>
+                <li>Asks "how do I do this?"</li>
+                <li>Code is mostly copied/adapted</li>
+                <li>PRs need heavy review</li>
+              </ul>
+            </div>
+            <div class="bg-card">
+              <h3 class="text-3xl text-accent mb-6">Mid-Level Dev</h3>
+              <ul class="text-xl space-y-4">
+                <li>Owns features end-to-end</li>
+                <li>Can break down complex tasks</li>
+                <li>Thinks about maintainability & scale</li>
+                <li>Asks "why are we doing this?"</li>
+                <li>Writes clean, testable code</li>
+                <li>PRs are small, clear, well-tested</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mt-12 text-2xl text-accent text-center">
+            Mid-level = you become a problem solver, not just a code writer
+          </p>
+        </section>
+
+        <!-- Slide 4: Technical Skills That Matter Most -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">Technical Skills That Actually Matter in 2026</h2>
+          <ul class="text-2xl text-lighttext space-y-8">
+            <li><strong>Git mastery</strong> — rebase, interactive rebase, cherry-pick, fixing bad merges</li>
+            <li><strong>Writing clean, readable code</strong> — naming, small functions, DRY, SOLID basics</li>
+            <li><strong>Debugging like a pro</strong> — reading stack traces, using dev tools, logging smartly</li>
+            <li><strong>Testing</strong> — unit + integration tests (Jest/Vitest), not just manual</li>
+            <li><strong>Understanding the full stack</strong> — frontend + backend + API + DB flow</li>
+            <li><strong>Performance basics</strong> — lazy loading, memoization, avoiding N+1 queries</li>
+            <li><strong>Refactoring legacy code</strong> — safely changing old code without breaking things</li>
+          </ul>
+          <p class="mt-12 text-xl text-gray-400 text-center">
+            Focus on depth in 2–3 areas, not shallow knowledge in 10
+          </p>
+        </section>
+
+        <!-- Slide 5: Mindset & Soft Skills -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">Mindset & Soft Skills That Get You Promoted</h2>
+          <ul class="text-2xl text-lighttext space-y-8">
+            <li>Ownership — "I got this" instead of "someone else will fix it"</li>
+            <li>Asking good questions — context, trade-offs, business impact</li>
+            <li>Code reviews — giving & receiving feedback constructively</li>
+            <li>Communication — explaining your work clearly in meetings/PRs</li>
+            <li>Proactivity — spotting improvements before being asked</li>
+            <li>Learning how to learn — picking up new tools fast</li>
+            <li>Handling pressure — delivering under deadlines without panic</li>
+          </ul>
+          <p class="mt-12 text-2xl text-accent text-center">
+            These are what seniors notice first — code is table stakes
+          </p>
+        </section>
+
+        <!-- Slide 6: Using AI to Level Up Faster -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">How to Use AI to Level Up (Not Slow Down)</h2>
+          <ul class="text-2xl text-lighttext space-y-8">
+            <li>Use it for explanations & learning new concepts fast</li>
+            <li>Ask for best practices & patterns — "show me clean React code for this"</li>
+            <li>Refactor & improve your own code — "make this more readable"</li>
+            <li>Debugging — "explain this error stack"</li>
+            <li>NEVER blindly copy — always understand & test</li>
+            <li>Build small projects with AI help → learn faster</li>
+            <li>Track what you learned from AI sessions (notes)</li>
+          </ul>
+          <p class="mt-12 text-xl text-accent text-center">
+            AI is your tutor, not your replacement
+          </p>
+        </section>
+
+        <!-- Slide 7: Portfolio & Proof -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">Portfolio That Screams "Mid-Level Ready"</h2>
+          <ul class="text-2xl text-lighttext space-y-8">
+            <li>2–3 solid projects (not 20 half-done ones)</li>
+            <li>Show clean code + tests + READMEs</li>
+            <li>Include real features: auth, API integration, deployment</li>
+            <li>Live demos + GitHub links</li>
+            <li>Write about trade-offs & decisions you made</li>
+            <li>Bonus: contribute to open source (even small PRs)</li>
+          </ul>
+          <p class="mt-12 text-xl text-gray-400 text-center">
+            Quality > quantity. Show you can ship real stuff
+          </p>
+        </section>
+
+        <!-- Slide 8: Common Traps & How to Avoid -->
+        <section data-background-color="#991b1b">
+          <h2 class="text-5xl font-bold text-white mb-10">Common Traps Juniors Fall Into</h2>
+          <ul class="text-2xl text-lighttext space-y-8">
+            <li>Tutorial hell — watching but not building</li>
+            <li>Over-relying on AI → weak fundamentals</li>
+            <li>Big PRs → hard to review, hard to learn</li>
+            <li>Fear of asking questions → wasted time</li>
+            <li>Chasing new frameworks → shallow knowledge</li>
+            <li>Not writing tests → bugs in production</li>
+            <li>Ignoring soft skills → stuck technically</li>
+          </ul>
+          <p class="mt-12 text-2xl text-accent text-center">
+            Recognize them early → escape faster
+          </p>
+        </section>
+
+        <!-- Slide 9: Actionable Steps to Level Up This Year -->
+        <section>
+          <h2 class="text-5xl font-bold text-primary mb-10">Your Action Plan This Year</h2>
+          <ol class="text-2xl text-lighttext space-y-8 list-decimal pl-10">
+            <li>Pick 2–3 core skills to master deeply (e.g. Git + Testing + Clean Code)</li>
+            <li>Build 1 real project every 2 months (with tests & deployment)</li>
+            <li>Do 1 code review per week (give feedback)</li>
+            <li>Ask 1 thoughtful question in every team meeting</li>
+            <li>Read 1 chapter of "Clean Code" or similar every week</li>
+            <li>Use AI daily — but explain what you learned in notes</li>
+            <li>Track your progress monthly (what improved?)</li>
+          </ol>
+          <p class="mt-16 text-3xl text-accent font-bold text-center">
+            Consistency beats intensity — start small today
+          </p>
+        </section>
+
+        <!-- Slide 10: Q&A / Thank You -->
+        <section data-background-color="#0f172a">
+          <h1 class="text-7xl font-bold text-white mb-16">Questions?</h1>
+          <p class="text-3xl text-accent mb-12">Let's talk about your own journey</p>
+          <ul class="text-2xl text-lighttext space-y-6 max-w-4xl mx-auto">
+            <li>→ Where do you feel stuck right now?</li>
+            <li>→ What skill do you want to level up most?</li>
+            <li>→ How are you using AI today?</li>
+            <li>→ Any trap you've fallen into?</li>
+          </ul>
+          <p class="mt-20 text-2xl text-primary text-center">Thank you! Reach out anytime 🚀</p>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        slideNumber: 'c/t',
+        controls: true,
+        progress: true,
+        center: false,
+        width: 1200,
+        height: 800,
+        margin: 0.1,
+        minScale: 0.2,
+        maxScale: 2.0,
+        plugins: [ RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
 </html>
