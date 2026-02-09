@@ -1,11 +1,23 @@
-.idea/
-*.iml
-*.iws
-*.eml
-out/
-.DS_Store
-.svn
-log/*.log
-tmp/**
+# reveal.js defaults + extras for safety
 node_modules/
-.sass-cache
+npm-debug.log
+yarn-error.log
+pnpm-lock.yaml          # if you use pnpm, but optional to ignore
+.DS_Store
+Thumbs.db
+*.log
+*.cache
+.env
+.env.local
+.vercel
+dist/*.map              # optional: sourcemaps if you don't need them
+.idea/                  # if you use IntelliJ
+.vscode/                # if VS Code
+*.swp
+*.swo
+
+# Keep these committed (they are needed!)
+# !dist/                # already not ignored
+# !plugin/
+# !css/
+# !js/
